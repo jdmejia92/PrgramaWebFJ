@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pico.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Balance | Movimientos </title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            Registro de ingresos gastos
+        </div>
+    </header>
+    <nav class="container">
+        <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/alta">Nuevo</a></li>
+        </ul>
+    </nav>
+    <section id="lista-ppal" class="container">
+        <h1>Listado de movimientos</h1>
+        <table id="tb-movements" class="movements">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Concepto</th>
+                    <th>Tipo</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody id="tbbody-movimientos">
+            </tbody>
+        </table>
+        <button id="btn-alta">+</button>
+    </section>
+    <section id="movimiento-activo" class="container inactive">
+        <h2>Modificar movimiento</h2>
+        <form id="form-movimiento">
+            <input type="text" id="id" hidden>
+            <label for="fecha">fecha:
+                <input type="date" name="fecha" id="fecha">
+            </label>
+            <label for="hora">Hora:
+                <input type="time" name="hora" id="hora">
+            </label>
+            <label for="concepto">Concepto:
+                <input type="text" name="concepto" id="concepto">
+            </label>
+            <label for="es_ingreso">
+                <input type="checkbox" name="es_ingreso" id="es_ingreso">Es ingreso
+            </label>
+            <label for="cantidad">Cantidad:
+                <input type="number" name="cantidad" id="cantidad">
+            </label>
+            <div class="grid">
+                <button id="aceptar">Aceptar</button>
+                <button id="cancelar">Cancelar</button>
+            </div>
+        </form>
+    </section>
+    <footer>
+        <div class="container">
+            &copy; 2022. Todos los derechos reservados
+        </div>
+    </footer>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
